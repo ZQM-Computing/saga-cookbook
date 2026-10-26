@@ -15,7 +15,7 @@ A **SAGA cookbook** for terrain analysis and geoscientific modeling from the com
 
 ## Repository role and status
 
-**Status:** Active, public — seeding. Pattern passes land in follow-up work from fleet-verified setups; the tables below list what is planned, not what is already written.
+**Status:** Active, public — first CLI-inspection pattern written. CI validates the script and contract; actual SAGA runtime output must be captured on a host with SAGA installed.
 
 **What this repository is:** SAGA patterns — see the table below.
 
@@ -33,11 +33,11 @@ GIS analysts who run terrain and grid tools in batch.
 - A DEM for your study area
 - Bash
 
-## Patterns (planned)
+## Patterns
 
-| # | Example | What it will demonstrate |
-|---|---------|--------------------------|
-| 01 | `01-cmd-basics` | Running saga_cmd tools and chaining them |
+| # | Example | Status | What it demonstrates |
+|---|---------|--------|---------------------|
+| 01 | [01-cmd-basics](examples/01-cmd-basics/README.md) | Written; runtime check pending | Check CLI availability and capture help output without assuming module IDs |
 | 02 | `02-terrain-attributes` | Slope, aspect, curvature, and wetness from a DEM |
 | 03 | `03-hydrology` | Flow routing and catchment tools |
 | 04 | `04-grid-tools` | Resampling, mosaicking, and grid algebra |
@@ -46,15 +46,17 @@ GIS analysts who run terrain and grid tools in batch.
 
 ```text
 saga-cookbook/
-├── examples/          # pattern passes, landing in follow-up work
+├── examples/01-cmd-basics/  # CLI inspection script
+├── tests/             # script/documentation contracts
+├── .github/workflows/ # CI
 ├── README.md
 └── LICENSE
 ```
 
 ## Roadmap
 
-- First pattern pass: the first two table rows
-- Second pass: the remaining rows, from fleet-verified setups
+- Add a deterministic synthetic-grid terrain example, pin its SAGA module identifier and assert output creation.
+- Add hydrology and grid-processing patterns only after their CLI parameters and output semantics are verified against SAGA 9.12.4.
 
 ## Contributing
 
