@@ -15,7 +15,7 @@ A **SAGA cookbook** for terrain analysis and geoscientific modeling from the com
 
 ## Repository role and status
 
-**Status:** Active, public — first CLI-inspection pattern written. CI validates the script and contract; actual SAGA runtime output must be captured on a host with SAGA installed.
+**Status:** Active, public — first CLI-inspection pattern written. CI validates shell syntax and exercises missing-binary, empty-output, unrelated-output, and nonzero-but-recognizable help cases with a fake CLI; actual SAGA runtime output must still be captured on a host with SAGA installed.
 
 **What this repository is:** SAGA patterns — see the table below.
 
